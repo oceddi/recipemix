@@ -1,11 +1,11 @@
 import { S3Client } from '@aws-sdk/client-s3';
 import { createPresignedPost } from '@aws-sdk/s3-presigned-post';
-import { NextApiRequest } from 'next';
 import { v4 as uuidv4 } from 'uuid';
 import Path from 'path';
+import { NextRequest } from 'next/server';
 
 export const GET = async function handler(
-  req: NextApiRequest
+  req: NextRequest
 ) {
   const { searchParams } = new URL(req.url || '')
   const name = searchParams.get('file') || '';

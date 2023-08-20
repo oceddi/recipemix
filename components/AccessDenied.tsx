@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { LiteralUnion, getProviders, signIn } from "next-auth/react"
+import { ClientSafeProvider, LiteralUnion, getProviders, signIn } from "next-auth/react"
 import { BuiltInProviderType } from 'next-auth/providers/index';
 import { CustomButton } from '.';
 
