@@ -9,10 +9,10 @@ The following features are supported:
 2. Search for recipes by category or keyword.
 3. Add new recipes to the site (if logged in):
 
-...Supports name and description.
-...Supports single photo upload of dish to AWS S3 bucket.
-...Supports ingredients list.
-...Supports preparation steps list.
+  *Supports name and description.
+  *Supports single photo upload of dish to AWS S3 bucket.
+  *Supports ingredients list.
+  *Supports preparation steps list.
 
 4. Comment and Rate recipes (if logged in).
 
