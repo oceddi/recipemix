@@ -4,6 +4,7 @@ import CustomButton from './CustomButton';
 import ExploreRecipes from './ExploreRecipes';
 import Footer from './Footer';
 import Layout from './Layout';
+import LoadingButton from './LoadingButton';
 import NewRecipeForm from './NewRecipeForm';
 import Navbar from './Navbar';
 import RecipeCard from './RecipeCard';
@@ -21,6 +22,7 @@ export {
   ExploreRecipes,
   Footer,
   Layout,
+  LoadingButton,
   NewRecipeForm,
   Navbar,
   RecipeCard,

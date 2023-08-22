@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { CustomButton } from '.';
+import { CustomButton, LoadingButton } from '.';
 import { useState, useEffect } from 'react';
 import { signIn, signOut, useSession, getProviders, LiteralUnion, ClientSafeProvider} from 'next-auth/react';
 import { BuiltInProviderType } from 'next-auth/providers/index';
@@ -12,6 +12,7 @@ const Navbar = () => {
 
   const [providers, setProviders] = useState<Record<LiteralUnion<BuiltInProviderType, string>, ClientSafeProvider> | null>(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
+  const [loggingIn, setLoggingIn] = useState(false);
 
   useEffect(() => {
     const setupProviders = async () => {
@@ -60,6 +61,7 @@ const Navbar = () => {
                     containerStyles="text-primary-blue rounded-full bg-sky-100 min-w-[200px]"
                     handleClick={() => {
                       setToggleDropdown(false);
+                      setLoggingIn(false);
                       signOut();
                     }}
                   />
@@ -71,13 +73,20 @@ const Navbar = () => {
             <>
               {providers && 
                 Object.values(providers).map((provider) => (
-                  <CustomButton
+                  loggingIn ? 
+                  (<LoadingButton key={provider.name}/>)
+                  : 
+                  (<CustomButton
                     title="Sign In"
                     btnType="button"
-                    containerStyles="text-primary-blue rounded-full bg-white min-w-[130px]"
-                    handleClick={() => signIn(provider.id)}
+                    containerStyles="text-primary-blue rounded-full bg-white min-w-[173px] border-2"
+                    handleClick={() => {
+                        setLoggingIn(true);
+                        signIn(provider.id);
+                      }
+                    }
                     key={provider.name}
-                  />
+                  />)
                 ))}
             </>
           )}

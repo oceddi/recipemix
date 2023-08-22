@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Example of how to implement Recipe website with Next.js",
   "author": "Dean McKee <oceddi@gmail.com>",
-  "license" : "MIT",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -22,6 +22,7 @@
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.14",
     "bcrypt": "^5.1.0",
+    "lucide-react": "^0.263.1",
     "mongodb": "^5.7.0",
     "mongoose": "^7.4.2",
     "next": "13.4.13",
